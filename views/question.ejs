@@ -1,0 +1,61 @@
+<%- include('partials/header'); -%>
+<%- include('partials/navbar'); -%>
+<div class="main-content container">
+    <div class="post">
+        <h2><%=postTitle%></h2>
+        <pre class="pre-text"><%=postBody%></pre>
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            post answer
+        </button>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Submit Answer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/answers/<%=post_id%>" method="post">
+                            <div class="mb-3">
+                                <label for="titleOfPost" class="form-label">Answer title</label>
+                                <input type="text" class="form-control" id="titleOfPost" name='answerTitle'
+                                    placeholder="Write the jist of your answer here ...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="answerDescription" class="form-label">Explanation in detail</label>
+                                <textarea class="form-control" id="answerBody" name="answerBody" rows="3"></textarea>
+                            </div>
+                            <div class="container">
+                                <div class="mb-3">
+                                    <label for="suggestReference" class="form-label">Add Reference to code or
+                                        docs</label>
+                                    <input type="url" id="suggestReference" name="suggestReference"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-block text-center">
+                                <button class="btn btn-success" type="reset">Reset</button>
+                                <button class="btn btn-success" type="submit">Submit Answer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%answers.forEach(function(answer){%>
+        <div class="post-answer">
+            <div class="card post-answer-card">
+                <div class="card-body">
+                    <h5 class="card-subtitle mb-2 text-muted"><%=answer.answerTitle%></h5>
+                    <pre class="pre-text card-text"><%=answer.answerBody%></pre>
+                    <a href="<%=answer.link%>" class="card-link">link</a>
+                </div>
+            </div>
+        </div>
+        <%});%>
+    </div>
+</div>
+<%- include('partials/footer'); -%>

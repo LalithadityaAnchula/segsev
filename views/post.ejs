@@ -1,0 +1,19 @@
+<%- include('partials/header'); -%>
+<div class="main-content container">
+  <form action="/compose" method="post">
+    <div class="mb-3">
+      <label for="titleOfPost" class="form-label">Post Title</label>
+      <input type="text" class="form-control" id="titleOfPost" name="postTitle" placeholder="I am getting Segentation SEGSEV ERROR">
+    </div>
+    <div class="mb-3">
+      <label for="postDescription" class="form-label">Post Description</label>
+      <textarea class="form-control" id="postDescription" name="postBody" rows="3"></textarea>
+    </div>
+    <div class="d-grid gap-2 d-md-block text-center">
+      <button class="btn btn-success" type="reset">Reset</button>
+      <button class="btn btn-success" type="submit">Post Question</button>
+    </div>
+  </form>
+</div>
+<%- include('partials/navbar'); -%>
+<%- include('partials/footer'); -%>

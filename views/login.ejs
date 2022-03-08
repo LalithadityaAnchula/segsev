@@ -1,0 +1,36 @@
+<%- include('partials/header'); -%>
+<div class="container-sm d-flex justify-content-center align-items-center">
+  <div class="card">
+    <%- include('partials/logo'); -%>
+    <div class="card-body">
+      <div class="row text-center googleauth-button">
+        <div class="col-md-12">
+          <a class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            Login with Google
+          </a>
+        </div>
+      </div>
+      <form method="post" action="/login">
+        <p class="errorFeedback text-center" style="color:lightcoral"><%=error%></p>
+        <div class="mb-3">
+          <input type="text" placeholder="Username" class="form-control" id="exampleInputEmail1" name="username"
+            aria-describedby="emailHelp" required autocomplete="off">
+          <div id="emailHelp" class="form-text">We promise not to spam your inbox.</div>
+        </div>
+        <div class="mb-3">
+          <input type="password" placeholder="password" class="form-control" id="exampleInputPassword1" name="password"
+            aria-describedby="passwordHelp" required>
+        </div>
+        <div class="forgot-password-section">
+          <a href="signup" style="color:rgb(76, 214, 76)">No Account? Sign Up</a>
+        </div>
+        <div class="Login-button text-center">
+          <button type="submit" class="btn btn-success">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer'); -%>

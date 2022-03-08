@@ -1,0 +1,48 @@
+<%- include('partials/header'); -%>
+<div class="container-sm d-flex justify-content-center align-items-center">
+  <div class="card">
+    <%- include('partials/logo'); -%>
+    <div class="card-body">
+      <div class="row text-center googleauth-button">
+        <div class="col-md-12">
+          <a class="btn btn-outline-dark" href="/auth/google" role="button" style="text-transform:none">
+            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            SignUp with Google
+          </a>
+        </div>
+      </div>
+      <form method="post" action="/signup">
+        <p class="errorFeedback text-center" style="color:lightcoral"><%=error%></p>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" placeholder="Please enter your mailid" class="form-control" id="exampleInputEmail1"
+            name="email" aria-describedby="emailHelp" required autocomplete="off">
+          <div id="emailHelp" class="form-text">We promise not to spam your inbox.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputUsername" class="form-label">Username</label>
+          <input type="text" placeholder="IamCoder" class="form-control" id="exampleInputUsername"
+            name="username" aria-describedby="emailHelp" required autocomplete="off">
+          <div id="emailHelp" class="form-text">Your name which you want to use</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="forgot-password-section">
+          <a href="/" style="color:rgb(76, 214, 76)">Have an acoount ? sign in</a>
+        </div>
+        <div class="Login-button text-center">
+          <button type="button" onclick='validate()' class="btn btn-success">signup</button>
+          <button style='display:none;' id="submit" type="submit">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer'); -%>

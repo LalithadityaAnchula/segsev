@@ -1,0 +1,119 @@
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  animation: fadeInRight 1s ease-in-out;
+}
+input,
+textarea,
+select,
+textarea {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.container-sm {
+  min-height: 100vh;
+}
+
+.container-sm .card {
+  border: none;
+}
+
+.container-sm .card .card-body input {
+  border-radius: 0.36rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.container-sm .card .card-body input:focus {
+  box-shadow: rgba(42, 255, 71, 0.507) 0px 0px 0px 3px;
+}
+
+.form-control:focus {
+  box-shadow: rgba(42, 255, 71, 0.507) 0px 0px 0px 3px;
+}
+
+.container-sm .card .logo-container {
+  border-radius: 50%;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.container-sm .card .logo-container img {
+  width: 100%;
+}
+
+.container-sm .card .card-body .forgot-password-section {
+  padding: 1% 0 5% 0;
+}
+
+.post {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.post-answer {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.post-answer-card {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  border: none;
+}
+
+.pre-text {
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  background: #fff;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  min-height: 70px;
+}
+
+.main-content {
+  margin-top: 6rem;
+}
+
+.googleauth-button {
+  padding: 1rem;
+}
+
+/* Animations using keyframes */
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
